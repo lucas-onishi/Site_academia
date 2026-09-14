@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ranks de Treino</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">SISTEMA DE PROGRESSÃO</div>
+    <h1>Cada treino sobe seu rank.</h1>
+    <p class="sub">Seis grupos musculares, cada um com sua própria trilha de evolução. Registre os exercícios, séries e repetições de cada treino e acompanhe o XP subir rumo ao próximo rank.</p>
+    <div class="stats-row">
+      <div class="stat"><div class="num" id="stat-total">0</div><div class="label">treinos registrados</div></div>
+      <div class="stat"><div class="num" id="stat-rank-medio">E</div><div class="label">rank médio</div></div>
+      <div class="stat"><div class="num" id="stat-top">—</div><div class="label">grupo mais evoluído</div></div>
+    </div>
+  </header>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="ranks">Ranks</button>
+    <button class="tab-btn" data-tab="registrar">Registrar treino</button>
+  </div>
+
+  <section class="panel active" id="panel-ranks">
+    <div class="grid" id="grid"></div>
+
+    <div class="reset-row">
+      <span class="reset-link" id="reset-btn">reiniciar progresso</span>
+    </div>
+  </section>
+
+  <section class="panel" id="panel-registrar">
+    <div class="form-card">
+      <div class="field">
+        <label for="form-group">Grupo muscular</label>
+        <select id="form-group"></select>
+      </div>
+
+      <div class="field">
+        <label>Adicionar exercício</label>
+        <div class="exercise-row-inputs">
+          <div class="field">
+            <input type="text" id="ex-name" placeholder="Ex: Supino reto">
+          </div>
+          <div class="field">
+            <input type="number" id="ex-sets" placeholder="Séries" min="1" value="3">
+          </div>
+          <div class="field">
+            <input type="number" id="ex-reps" placeholder="Reps" min="1" value="10">
+          </div>
+          <button class="add-exercise-btn" id="add-ex-btn">Adicionar</button>
+        </div>
+      </div>
+
+      <ul class="exercise-list" id="exercise-list"></ul>
+
+      <div class="form-footer">
+        <div class="xp-preview">XP deste treino: <strong id="xp-preview">0</strong></div>
+        <button class="finish-btn" id="finish-btn" disabled>Finalizar treino</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="flash" id="flash"></div>
+
+<script src="js.js"></script>
+</body>
+</html>
