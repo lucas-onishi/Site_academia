@@ -203,7 +203,7 @@ document.getElementById("reset-btn").addEventListener("click", async () => {
   showFlash("Progresso reiniciado.");
 });
 
-/* ---------- Abas ---------- */
+/*Abas*/
 function showTab(name){
   document.querySelectorAll(".tab-btn").forEach(b => b.classList.toggle("active", b.dataset.tab === name));
   document.getElementById("panel-ranks").classList.toggle("active", name === "ranks");
@@ -214,7 +214,7 @@ document.querySelectorAll(".tab-btn").forEach(btn => {
   btn.addEventListener("click", () => showTab(btn.dataset.tab));
 });
 
-/* ---------- Formulário de registro ---------- */
+/*Formulário de registro*/
 const groupSelect = document.getElementById("form-group");
 groupSelect.innerHTML = GROUPS.map(g => `<option value="${g.key}">${g.name}</option>`).join("");
 
